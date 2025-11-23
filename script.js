@@ -123,26 +123,26 @@ function handleEmailSubmit(event) {
         modalContent.innerHTML = originalContent;
     }, 3000);
     
-    // TODO: Integrate with your backend API
-    // Example:
-    // fetch('/api/subscribe', {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({
-    //         email: email,
-    //         name: name,
-    //         type: formType
-    //     })
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     // Handle success
-    // })
-    // .catch(error => {
-    //     // Handle error
-    // });
+    // Backend API com sheets
+    fetch("https://script.google.com/macros/s/AKfycbwyAj_1IdGRFFCrykMpeagEGQG3VEP6Lm5RnNbmLlKcqLg0nOpEkwfW7wrvyDVmEYFgDw/exec", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            email: email,
+            name: name,
+            type: formType
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Guardado com sucesso:", data);
+    })
+    .catch(error => {
+        console.error("Erro ao guardar:", error);
+    });
+    
 }
 
 // Smooth scroll for anchor links
