@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCaring – A dose certa, no momento certo, com o cuidado de sempre.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="stickyCTA">
+        <div class="sticky-cta-content">
+            <p>Quer saber mais sobre o MedCaring?</p>
+            <button class="btn-sticky" onclick="openEmailModal('waiting-list')">Quero aderir como farmácia</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-logo">
+                        <img src="Logo MedCaring.png" alt="MedCaring Logo">
+                    </div>
+                    <h1 class="hero-headline"><span class="no-break">A dose certa, no momento certo</span><br>com o cuidado de sempre.</h1>
+                    <p class="hero-subheadline">O dispensador inteligente que garante medicação segura, automática e acompanhada à distância.</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="openEmailModal('individual')">Quero aderir como farmácia</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="MedCaring dispenser sem fundo.png" alt="MedCaring - Dispensador de medicamentos inteligente">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Problema -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">Um desafio real que afeta milhões</h2>
+            <div class="problem-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number">2,5 milhões</div>
+                    <div class="stat-label">de idosos em Portugal</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🏠</div>
+                    <div class="stat-number">1/2 milhão</div>
+                    <div class="stat-label">vive sozinho</div>
+                </div>
+                <div class="stat-card highlight larger">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-number">Mais de 50%</div>
+                    <div class="stat-label">esquecem-se ou trocam a medicação</div>
+                    <div class="stat-consequence">
+                        <div class="stat-icon-small">📉</div>
+                        <div class="stat-text">Baixa Adesão → Agravamento Clínico</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Propósito -->
+    <section class="purpose">
+        <div class="container">
+            <div class="purpose-content">
+                <div class="purpose-text">
+                    <h2 class="section-title">Cuidar da medicação, para cuidar da vida</h2>
+                    <p class="purpose-description">Criamos um sistema inteligente que garante a toma correta da medicação sem depender do cuidador — com segurança, precisão e acompanhamento em tempo real.</p>
+                </div>
+                <div class="purpose-image">
+                    <img src="MedCaring dispenser sem fundo.png" alt="Dispensador MedCaring">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Como Funciona</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📦</div>
+                    <h3>Recebe a medicação organizada pela farmácia</h3>
+                    <p>Integra o serviço de Preparação Individualizada de Medicamentos (PIM) das farmácias</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">⏰</div>
+                    <h3>Dispensa a dose certa à hora certa</h3>
+                    <ul class="step-sublist">
+                        <li>Integra alertas visuais e sonoros para a toma</li>
+                        <li>Filma a toma para garantia de segurança</li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📱</div>
+                    <h3>Comunica em tempo real com o cuidador</h3>
+                    <ul class="step-sublist">
+                        <li>Alerta de esquecimento</li>
+                        <li>Verificação da toma</li>
+                        <li>Programação de medicação SOS</li>
+                        <li>Análise de tendências de dispensação</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simples e Seguro -->
+    <section class="simple-secure">
+        <div class="container">
+            <h2 class="section-title">Tecnologia intuitiva e pensada para o utilizador</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🚨</div>
+                    <h3>Dispensa medicação SOS conforme pedido</h3>
+                    <p>Capacidade de dispensar medicação de emergência quando necessário</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💊</div>
+                    <h3>Carregamento fácil da medicação</h3>
+                    <p>Processo simples e intuitivo com parceria com as farmácias</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Segurança e bloqueio do dispositivo</h3>
+                    <p>Proteção total contra acesso não autorizado</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👤</div>
+                    <h3>Interface humanizada e acessível</h3>
+                    <p>Design pensado para ser fácil de usar por todos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Papel da Farmácia -->
+    <section class="pharmacy-role">
+        <div class="container">
+            <h2 class="section-title">O papel fundamental da farmácia e do farmacêutico</h2>
+            <div class="pharmacy-content">
+                <div class="pharmacy-intro">
+                    <div class="pharmacy-highlight">
+                        <span class="highlight-icon">🔑</span>
+                        <p>A farmácia e o farmacêutico são <strong>peças chave</strong> no acompanhamento da medicação e na saúde dos utentes, sendo o <strong>ponto de contacto mais frequente</strong> entre estes e o sistema de saúde.</p>
+                    </div>
+                </div>
+                
+                <div class="pharmacy-solution">
+                    <div class="pharmacy-offer-box">
+                        <h3 class="pharmacy-subtitle">Com o MedCaring, as farmácias podem oferecer</h3>
+                        <div class="pharmacy-offer-content">
+                            <p class="pharmacy-offer-text">
+                                um <strong>serviço completo de gestão de medicação</strong>, desde a <strong>preparação individualizada (PIM)</strong> até à <strong>garantia de que a medicação é tomada no horário correto</strong> e de acordo com as necessidades,
+                            </p>
+                            <p class="pharmacy-offer-result">
+                                <strong>melhorando a qualidade de vida</strong> de quem confia nelas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Público-alvo -->
+    <section class="target-audience">
+        <div class="container">
+            <h2 class="section-title">Para quem é o MedCaring?</h2>
+            <div class="audience-cards">
+                <div class="audience-card">
+                    <h3>Tecnologia pensada para idosos com dificuldades na toma da medicação</h3>
+                    <p class="audience-description">Uma solução para idosos e suas famílias que garante:</p>
+                    <ul class="benefits-list">
+                        <li>✓ Autonomia</li>
+                        <li>✓ Segurança</li>
+                        <li>✓ Tranquilidade</li>
+                    </ul>
+                </div>
+                <div class="audience-card">
+                    <h3>Tecnologia para implementar em conjunto com as farmácias locais</h3>
+                    <p class="audience-description">Para farmácias que queiram trazer qualidade de vida aos seus utentes, oferecendo um serviço diferenciado e de valor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Farmácias interessadas em aderir</h2>
+                <p class="cta-subtitle">Inscreva-se para entramos em contacto consigo.</p>
+                <button class="btn-cta-large" onclick="openEmailModal('waiting-list')">Quero aderir como farmácia</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#sobre">Sobre nós</a>
+                    <a href="contacto.html">Contacto</a>
+                    <a href="#privacidade">Privacidade</a>
+                    <a href="#termos">Termos</a>
+                </div>
+                <div class="footer-logos">
+                    <img src="Logo MedCaring.png" alt="MedCaring Logo" class="footer-logo">
+                    <img src="logo_horizontal.png" alt="Junitec Logo" class="footer-logo">
+                </div>
+                <p class="footer-disclaimer">Projeto desenvolvido no âmbito da Junitec – Júnior Empresa do Instituto Superior Técnico.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Email Modal -->
+    <div class="modal" id="emailModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEmailModal()">&times;</span>
+            <h2 id="modalTitle">Vamos entrar em contacto</h2>
+            <p id="modalSubtitle">Deixe o seu email e entraremos em contacto consigo em breve.</p>
+            <form id="emailForm" onsubmit="handleEmailSubmit(event)">
+                <input type="email" id="emailInput" placeholder="O seu email" required>
+                <input type="text" id="nameInput" placeholder="O seu nome">
+                <input type="hidden" id="formType" value="">
+                <button type="submit" class="btn-submit">Submeter</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
