@@ -124,7 +124,7 @@ function handleEmailSubmit(event) {
     }, 3000);
     
     // Backend API com sheets
-    fetch("https://script.google.com/macros/s/AKfycbx2FW5S0gUsFY2C2JdhCljc1RzuWqt4GER2debGE8WT11POgvgiKJfZBhYqfs6-3KHN8A/exec", {
+    fetch("/api/save", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
