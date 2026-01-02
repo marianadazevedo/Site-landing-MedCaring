@@ -10,16 +10,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">
+                    <img src="Logo MedCaring.png" alt="MedCaring Logo">
+                </a>
+                <button class="nav-toggle" onclick="toggleMobileMenu()" id="navToggle">☰</button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#desafio">Desafio</a></li>
+                    <li><a href="#proposito">Propósito</a></li>
+                    <li><a href="#como-funciona">Como Funciona</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#publico">Para Quem</a></li>
+                    <li><a href="contacto.html">Contactos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Sticky CTA -->
     <div class="sticky-cta" id="stickyCTA">
         <div class="sticky-cta-content">
-            <p>Quer saber mais sobre o MedCaring?</p>
-            <button class="btn-sticky" onclick="openEmailModal('waiting-list')">Quero aderir como farmácia</button>
+            <p>Quer saber mais sobre a MedCaring?</p>
+            <button class="btn-sticky" onclick="openEmailModal('waiting-list')">Quero saber mais</button>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -29,145 +49,72 @@
                     <h1 class="hero-headline"><span class="no-break">A dose certa, no momento certo</span><br>com o cuidado de sempre.</h1>
                     <p class="hero-subheadline">O dispensador inteligente que garante medicação segura, automática e acompanhada à distância.</p>
                     <div class="hero-buttons">
-                        <button class="btn-primary" onclick="openEmailModal('individual')">Quero aderir como farmácia</button>
+                        <button class="btn-primary" onclick="openEmailModal('individual')">Quero saber mais</button>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="MedCaring dispenser sem fundo.png" alt="MedCaring - Dispensador de medicamentos inteligente">
+                    <img src="Dispensador novo 1.2.png" alt="MedCaring - Dispensador de medicamentos inteligente">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- O Problema -->
-    <section class="problem">
-        <div class="container">
-            <h2 class="section-title">Um desafio real que afeta milhões</h2>
-            <div class="problem-stats">
-                <div class="stat-card">
-                    <div class="stat-icon">👥</div>
-                    <div class="stat-number">2,5 milhões</div>
-                    <div class="stat-label">de idosos em Portugal</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🏠</div>
-                    <div class="stat-number">1/2 milhão</div>
-                    <div class="stat-label">vive sozinho</div>
-                </div>
-                <div class="stat-card highlight larger">
-                    <div class="stat-icon">⚠️</div>
-                    <div class="stat-number">Mais de 50%</div>
-                    <div class="stat-label">esquecem-se ou trocam a medicação</div>
-                    <div class="stat-consequence">
-                        <div class="stat-icon-small">📉</div>
-                        <div class="stat-text">Baixa Adesão → Agravamento Clínico</div>
+    <!-- O Desafio -->
+    <section class="challenge" id="desafio">
+        <div class="challenge-content-new">
+            <div class="challenge-image-side">
+                <img src="confusão medicação.webp" alt="Confusão com medicação">
+            </div>
+            <div class="challenge-text-side">
+                <div class="challenge-stats">
+                    <div class="challenge-stat">
+                        <span class="challenge-number">2,5 milhões</span>
+                        <span class="challenge-label">de idosos em Portugal</span>
+                    </div>
+                    <div class="challenge-stat">
+                        <span class="challenge-number">1/2 milhão</span>
+                        <span class="challenge-label">vive sozinho</span>
                     </div>
                 </div>
+                <h2 class="challenge-title">Quando a medicação falha,<br>a saúde está em risco</h2>
+                <p class="challenge-impact">Mais de <strong>50% dos idosos</strong> esquecem-se ou trocam a medicação, levando a <strong>impactos graves na saúde</strong> e ao agravamento de condições clínicas.</p>
             </div>
         </div>
     </section>
 
     <!-- O Propósito -->
-    <section class="purpose">
+    <section class="purpose" id="proposito">
         <div class="container">
-            <div class="purpose-content">
-                <div class="purpose-text">
-                    <h2 class="section-title">Cuidar da medicação, para cuidar da vida</h2>
+            <div class="purpose-content-new">
+                <div class="purpose-text-new">
+                    <h2 class="section-title">Cuidar da medicação,<br>para cuidar da vida</h2>
                     <p class="purpose-description">Criamos um sistema inteligente que garante a toma correta da medicação sem depender do cuidador — com segurança, precisão e acompanhamento em tempo real.</p>
                 </div>
-                <div class="purpose-image">
-                    <img src="MedCaring dispenser sem fundo.png" alt="Dispensador MedCaring">
+                <div class="purpose-image-new">
+                    <img src="idosa sozinha.avif" alt="Idosa com medicação">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Como Funciona -->
-    <section class="how-it-works">
+    <section class="how-it-works" id="como-funciona">
         <div class="container">
             <h2 class="section-title">Como Funciona</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">📦</div>
-                    <h3>Recebe a medicação organizada pela farmácia</h3>
-                    <p>Integra o serviço de Preparação Individualizada de Medicamentos (PIM) das farmácias</p>
+            <div class="how-works-content">
+                <div class="how-works-visual" id="dispenserImageContainer">
+                    <img src="Dispensador novo 1.2.png" alt="Dispensador MedCaring" id="dispenserImage">
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">⏰</div>
-                    <h3>Dispensa a dose certa à hora certa</h3>
-                    <ul class="step-sublist">
-                        <li>Integra alertas visuais e sonoros para a toma</li>
-                        <li>Filma a toma para garantia de segurança</li>
-                    </ul>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">📱</div>
-                    <h3>Comunica em tempo real com o cuidador</h3>
-                    <ul class="step-sublist">
-                        <li>Alerta de esquecimento</li>
-                        <li>Verificação da toma</li>
-                        <li>Programação de medicação SOS</li>
-                        <li>Análise de tendências de dispensação</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Simples e Seguro -->
-    <section class="simple-secure">
-        <div class="container">
-            <h2 class="section-title">Tecnologia intuitiva e pensada para o utilizador</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">🚨</div>
-                    <h3>Dispensa medicação SOS conforme pedido</h3>
-                    <p>Capacidade de dispensar medicação de emergência quando necessário</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💊</div>
-                    <h3>Carregamento fácil da medicação</h3>
-                    <p>Processo simples e intuitivo com parceria com as farmácias</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Segurança e bloqueio do dispositivo</h3>
-                    <p>Proteção total contra acesso não autorizado</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👤</div>
-                    <h3>Interface humanizada e acessível</h3>
-                    <p>Design pensado para ser fácil de usar por todos</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Papel da Farmácia -->
-    <section class="pharmacy-role">
-        <div class="container">
-            <h2 class="section-title">O papel fundamental da farmácia e do farmacêutico</h2>
-            <div class="pharmacy-content">
-                <div class="pharmacy-intro">
-                    <div class="pharmacy-highlight">
-                        <span class="highlight-icon">🔑</span>
-                        <p>A farmácia e o farmacêutico são <strong>peças chave</strong> no acompanhamento da medicação e na saúde dos utentes, sendo o <strong>ponto de contacto mais frequente</strong> entre estes e o sistema de saúde.</p>
+                <div class="how-works-steps">
+                    <div class="how-step">
+                        <h3>1. A toma é simples e guiada</h3>
+                        <p>Quando chega a hora, o dispensador <strong>toca e brilha</strong> para alertar o utente. Basta <strong>tocar no botão</strong> para dispensar a medicação. A toma deve ser feita <strong>em frente ao dispensador</strong> para que possa ser filmada e verificada.</p>
                     </div>
-                </div>
-                
-                <div class="pharmacy-solution">
-                    <div class="pharmacy-offer-box">
-                        <h3 class="pharmacy-subtitle">Com o MedCaring, as farmácias podem oferecer</h3>
-                        <div class="pharmacy-offer-content">
-                            <p class="pharmacy-offer-text">
-                                um <strong>serviço completo de gestão de medicação</strong>, desde a <strong>preparação individualizada (PIM)</strong> até à <strong>garantia de que a medicação é tomada no horário correto</strong> e de acordo com as necessidades,
-                            </p>
-                            <p class="pharmacy-offer-result">
-                                <strong>melhorando a qualidade de vida</strong> de quem confia nelas.
-                            </p>
+                    <div class="how-step">
+                        <div class="how-step-text">
+                            <h3>2. Recarregamento semanal</h3>
+                            <p>O recarregamento é feito apenas com a <strong>introdução do novo rolo</strong> preparado pela farmácia semanalmente. É rápido, simples e sem complicações.</p>
+                            <button class="btn-show-roll" onclick="toggleRollImage()" id="rollButton">Ver rolo</button>
                         </div>
                     </div>
                 </div>
@@ -175,13 +122,72 @@
         </div>
     </section>
 
-    <!-- Público-alvo -->
-    <section class="target-audience">
+    <!-- Features -->
+    <section class="features-section" id="funcionalidades">
         <div class="container">
-            <h2 class="section-title">Para quem é o MedCaring?</h2>
+            <h2 class="section-title">Funcionalidades que fazem a diferença</h2>
+            <div class="features-grid-new">
+                <button class="feature-btn" onclick="toggleFeature(0)">
+                    <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                        <circle cx="12" cy="13" r="4"></circle>
+                    </svg>
+                    <span>Câmara</span>
+                </button>
+                <button class="feature-btn" onclick="toggleFeature(1)">
+                    <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <span>SOS</span>
+                </button>
+                <button class="feature-btn" onclick="toggleFeature(2)">
+                    <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="6" x2="12" y2="12"></line>
+                        <line x1="12" y1="12" x2="16" y2="16"></line>
+                    </svg>
+                    <span>Alertas</span>
+                </button>
+                <button class="feature-btn" onclick="toggleFeature(3)">
+                    <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span>Comunicação</span>
+                </button>
+                <button class="feature-btn" onclick="toggleFeature(4)">
+                    <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>Segurança</span>
+                </button>
+                <button class="feature-btn" onclick="toggleFeature(5)">
+                    <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    <span>Interface</span>
+                </button>
+            </div>
+            <div class="feature-description" id="featureDescription" style="display: none;">
+                <div id="featureContent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Público-alvo -->
+    <section class="target-audience" id="publico">
+        <div class="container">
+            <h2 class="section-title">Para quem é a MedCaring?</h2>
             <div class="audience-cards">
                 <div class="audience-card">
-                    <h3>Tecnologia pensada para idosos com dificuldades na toma da medicação</h3>
+                    <h3>Para idosos com dificuldades na toma da medicação</h3>
                     <p class="audience-description">Uma solução para idosos e suas famílias que garante:</p>
                     <ul class="benefits-list">
                         <li>✓ Autonomia</li>
@@ -190,8 +196,8 @@
                     </ul>
                 </div>
                 <div class="audience-card">
-                    <h3>Tecnologia para implementar em conjunto com as farmácias locais</h3>
-                    <p class="audience-description">Para farmácias que queiram trazer qualidade de vida aos seus utentes, oferecendo um serviço diferenciado e de valor.</p>
+                    <h3>Para instituições de apoio domiciliário</h3>
+                    <p class="audience-description">Uma solução para instituições que prestam cuidados domiciliários, permitindo acompanhar a medicação de vários utentes de forma eficiente e segura, garantindo tranquilidade para as famílias e profissionais.</p>
                 </div>
             </div>
         </div>
@@ -201,9 +207,9 @@
     <section class="cta-final">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Farmácias interessadas em aderir</h2>
-                <p class="cta-subtitle">Inscreva-se para entramos em contacto consigo.</p>
-                <button class="btn-cta-large" onclick="openEmailModal('waiting-list')">Quero aderir como farmácia</button>
+                <h2 class="cta-title">Interessado na MedCaring?</h2>
+                <p class="cta-subtitle">Seja para uso individual ou para a sua instituição, inscreva-se para entramos em contacto consigo.</p>
+                <button class="btn-cta-large" onclick="openEmailModal('waiting-list')">Quero saber mais</button>
             </div>
         </div>
     </section>
@@ -214,7 +220,7 @@
             <div class="footer-content">
                 <div class="footer-links">
                     <a href="#sobre">Sobre nós</a>
-                    <a href="contacto.html">Contacto</a>
+                    <a href="contacto.html">Contactos</a>
                     <a href="#privacidade">Privacidade</a>
                     <a href="#termos">Termos</a>
                 </div>
@@ -245,4 +251,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 

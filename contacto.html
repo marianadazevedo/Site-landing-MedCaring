@@ -10,26 +10,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header/Navigation -->
-    <header class="header">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo-link">
-                <img src="Logo MedCaring.png" alt="MedCaring Logo" class="header-logo">
-            </a>
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">
+                    <img src="Logo MedCaring.png" alt="MedCaring Logo">
+                </a>
+                <button class="nav-toggle" onclick="toggleMobileMenu()" id="navToggle">☰</button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html#desafio">Desafio</a></li>
+                    <li><a href="index.html#proposito">Propósito</a></li>
+                    <li><a href="index.html#como-funciona">Como Funciona</a></li>
+                    <li><a href="index.html#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="index.html#publico">Para Quem</a></li>
+                    <li><a href="contacto.html">Contactos</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
-            <h1 class="contact-title">Contacto</h1>
+            <h1 class="contact-title">Contactos</h1>
             <div class="contact-content">
                 <div class="contact-cards-grid">
                     <div class="contact-card">
                         <div class="contact-icon">📧</div>
-                        <h2 class="contact-name">Martim Rosa</h2>
+                        <h2 class="contact-name">Gabriel Barata</h2>
                         <p class="contact-email">
-                            <a href="mailto:martim.rosa@junitec.pt">martim.rosa@junitec.pt</a>
+                            <a href="mailto:gabriel.barata@junitec.pt">gabriel.barata@junitec.pt</a>
                         </p>
                     </div>
                     <div class="contact-card">
@@ -41,9 +52,16 @@
                     </div>
                     <div class="contact-card">
                         <div class="contact-icon">📧</div>
-                        <h2 class="contact-name">Margarida Nunes</h2>
+                        <h2 class="contact-name">Martim Rosa</h2>
                         <p class="contact-email">
-                            <a href="mailto:margarida.nunes@junitec.pt">margarida.nunes@junitec.pt</a>
+                            <a href="mailto:martim.rosa@junitec.pt">martim.rosa@junitec.pt</a>
+                        </p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h2 class="contact-name">Matilde Sousa</h2>
+                        <p class="contact-email">
+                            <a href="mailto:matilde.sousa@junitec.pt">matilde.sousa@junitec.pt</a>
                         </p>
                     </div>
                 </div>
@@ -57,7 +75,7 @@
             <div class="footer-content">
                 <div class="footer-links">
                     <a href="index.html">Início</a>
-                    <a href="contacto.html">Contacto</a>
+                    <a href="contacto.html">Contactos</a>
                     <a href="#privacidade">Privacidade</a>
                     <a href="#termos">Termos</a>
                 </div>

@@ -155,6 +155,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth',
                 block: 'start'
             });
+            // Close mobile menu if open
+            const navMenu = document.getElementById('navMenu');
+            if (navMenu) {
+                navMenu.classList.remove('active');
+            }
         }
     });
 });
@@ -185,5 +190,88 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Feature descriptions data
+const featureDescriptions = [
+    {
+        title: 'Câmara integrada',
+        text: 'Filma a toma da medicação para garantir que foi efetuada corretamente, proporcionando segurança e tranquilidade à família. As filmagens estão acessíveis na app associada.'
+    },
+    {
+        title: 'Medicação SOS',
+        text: 'Capacidade de dispensar medicação de emergência quando necessário, através de um pedido simples na app.'
+    },
+    {
+        title: 'Alertas para outros tipos de medicação',
+        text: 'O dispensador também avisa para a toma de outro tipo de terapêuticas fora os comprimidos e cápsulas, nomeadamente injeções ou inaladores.'
+    },
+    {
+        title: 'Comunicação com a família',
+        text: 'Mantém a família informada sobre a toma da medicação em tempo real, proporcionando tranquilidade. Permite alertas de esquecimento para a app e análise de tendências.'
+    },
+    {
+        title: 'Segurança garantida',
+        text: 'O dispositivo está bloqueado, apenas permitindo acesso a quem possua o código de desbloqueio, prevenindo acessos inusitados.'
+    },
+    {
+        title: 'Interface simplificada',
+        text: 'Design pensado para ser facilmente utilizado, com apenas um botão e interações simples e intuitivas para todos os utilizadores.'
+    }
+];
 
+// Toggle feature description
+function toggleFeature(index) {
+    const descriptionDiv = document.getElementById('featureDescription');
+    const contentDiv = document.getElementById('featureContent');
+    const buttons = document.querySelectorAll('.feature-btn');
+    
+    // If clicking the same button, close it
+    if (descriptionDiv.style.display === 'block' && buttons[index].classList.contains('active')) {
+        descriptionDiv.style.display = 'none';
+        buttons[index].classList.remove('active');
+        return;
+    }
+    
+    // Update content
+    contentDiv.innerHTML = `
+        <h3>${featureDescriptions[index].title}</h3>
+        <p>${featureDescriptions[index].text}</p>
+    `;
+    
+    // Remove active class from all buttons
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // Add active class to clicked button
+    buttons[index].classList.add('active');
+    
+    // Show description
+    descriptionDiv.style.display = 'block';
+    descriptionDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Toggle roll image
+function toggleRollImage() {
+    const dispenserImage = document.getElementById('dispenserImage');
+    const button = document.getElementById('rollButton');
+    const isShowingRoll = dispenserImage.src.includes('1.1');
+    
+    if (!isShowingRoll) {
+        // Show roll image
+        dispenserImage.src = 'Dispensador novo 1.1.png';
+        dispenserImage.alt = 'Recarregamento do rolo';
+        button.textContent = 'Ocultar rolo';
+        dispenserImage.style.animation = 'fadeIn 0.5s ease';
+    } else {
+        // Show original image
+        dispenserImage.src = 'Dispensador novo 1.2.png';
+        dispenserImage.alt = 'Dispensador MedCaring';
+        button.textContent = 'Ver rolo';
+        dispenserImage.style.animation = 'fadeIn 0.5s ease';
+    }
+}
+
+// Toggle mobile menu
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('active');
+}
 
