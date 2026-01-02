@@ -22,35 +22,55 @@ function openEmailModal(type) {
     const modalSubtitle = document.getElementById('modalSubtitle');
     const formType = document.getElementById('formType');
     
-    // Set form type
-    formType.value = type;
-    
-    // Update modal content based on type
+    // Optionally preselect based on caller, but always ask the user to choose explicitly
+    formType.value = '';
     switch(type) {
         case 'individual':
-            modalTitle.textContent = 'Vamos entrar em contacto';
-            modalSubtitle.textContent = 'Deixe o seu email e entraremos em contacto consigo em breve.';
+            modalTitle.textContent = 'Queremos saber mais sobre si';
+            modalSubtitle.textContent = 'Escolha uma opção e deixe o seu contacto.';
             break;
         case 'business':
-            modalTitle.textContent = 'Quero obter para a minha empresa';
-            modalSubtitle.textContent = 'Deixe o seu email e entraremos em contacto consigo para discutir soluções empresariais.';
+            modalTitle.textContent = 'Queremos saber mais sobre a sua instituição';
+            modalSubtitle.textContent = 'Escolha uma opção e deixe o seu contacto.';
             break;
         case 'waiting-list':
             modalTitle.textContent = 'Vamos entrar em contacto';
-            modalSubtitle.textContent = 'Deixe o seu email e entraremos em contacto consigo em breve.';
+            modalSubtitle.textContent = 'Escolha uma opção e deixe o seu contacto.';
             break;
         default:
             modalTitle.textContent = 'Vamos entrar em contacto';
-            modalSubtitle.textContent = 'Deixe o seu email e entraremos em contacto consigo em breve.';
+            modalSubtitle.textContent = 'Escolha uma opção e deixe o seu contacto.';
     }
     
     modal.classList.add('show');
     document.body.style.overflow = 'hidden';
     
-    // Focus on email input
+    // Focus on email input and setup default visibility
     setTimeout(() => {
+        const form = document.getElementById('emailForm');
+        if (form) form.reset();
+        document.getElementById('emailInput').style.display = '';
+        document.getElementById('phoneInput').style.display = 'none';
         document.getElementById('emailInput').focus();
     }, 100);
+
+    // attach listeners for contact method toggling (idempotent)
+    setTimeout(() => {
+        const contactRadios = document.querySelectorAll('input[name="contactMethod"]');
+        contactRadios.forEach(r => {
+            r.addEventListener('change', function() {
+                const emailEl = document.getElementById('emailInput');
+                const phoneEl = document.getElementById('phoneInput');
+                if (this.value === 'phone') {
+                    emailEl.style.display = 'none';
+                    phoneEl.style.display = '';
+                } else {
+                    emailEl.style.display = '';
+                    phoneEl.style.display = 'none';
+                }
+            });
+        });
+    }, 200);
 }
 
 function closeEmailModal() {
@@ -80,22 +100,44 @@ document.addEventListener('keydown', function(event) {
 // Handle Email Form Submission
 function handleEmailSubmit(event) {
     event.preventDefault();
-    
-    const email = document.getElementById('emailInput').value;
-    const name = document.getElementById('nameInput').value;
-    const formType = document.getElementById('formType').value;
-    
-    // Validate email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Por favor, insira um email válido.');
+    const roleEl = document.querySelector('input[name="role"]:checked');
+    if (!roleEl) {
+        alert('Por favor, escolha se é utente/familiar ou instituição.');
         return;
     }
-    
-    // Here you would typically send the data to your backend
-    // For now, we'll just log it and show a success message
+    const role = roleEl.value; // 'individual' or 'institution'
+
+    const contactMethodEl = document.querySelector('input[name="contactMethod"]:checked');
+    const contactMethod = contactMethodEl ? contactMethodEl.value : 'email';
+
+    const name = document.getElementById('nameInput').value || '';
+    let contactValue = '';
+
+    if (contactMethod === 'email') {
+        const email = document.getElementById('emailInput').value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Por favor, insira um email válido.');
+            return;
+        }
+        contactValue = email;
+    } else {
+        const phone = document.getElementById('phoneInput').value.trim();
+        // minimal phone validation: at least 7 digits
+        const digits = phone.replace(/[^0-9]/g, '');
+        if (digits.length < 7) {
+            alert('Por favor, insira um número de telemóvel válido.');
+            return;
+        }
+        contactValue = phone;
+    }
+
+    const formType = role === 'individual' ? 'individual' : 'institution';
+
+    // Log and prepare payload
     console.log('Form submitted:', {
-        email: email,
+        contactMethod: contactMethod,
+        contactValue: contactValue,
         name: name || 'Não fornecido',
         type: formType
     });
@@ -130,7 +172,8 @@ function handleEmailSubmit(event) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            email: email,
+            contactMethod: contactMethod,
+            contactValue: contactValue,
             name: name,
             type: formType
         })

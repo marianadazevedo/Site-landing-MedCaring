@@ -238,10 +238,24 @@
         <div class="modal-content">
             <span class="close" onclick="closeEmailModal()">&times;</span>
             <h2 id="modalTitle">Vamos entrar em contacto</h2>
-            <p id="modalSubtitle">Deixe o seu email e entraremos em contacto consigo em breve.</p>
+            <p id="modalSubtitle">Deixe o seu contacto e entraremos em contacto consigo em breve.</p>
             <form id="emailForm" onsubmit="handleEmailSubmit(event)">
-                <input type="email" id="emailInput" placeholder="O seu email" required>
-                <input type="text" id="nameInput" placeholder="O seu nome">
+                <div class="role-choice" style="margin-bottom:12px;text-align:left;">
+                    <label style="display:block;margin-bottom:6px;font-weight:600;">Sou:</label>
+                    <label style="display:inline-flex;align-items:center;margin-right:12px;"><input type="radio" name="role" value="individual">&nbsp;Sou um idoso ou familiar</label>
+                    <label style="display:inline-flex;align-items:center;"><input type="radio" name="role" value="institution">&nbsp;Sou uma instituição</label>
+                </div>
+
+                <input type="text" id="nameInput" placeholder="O seu nome" style="margin-bottom:12px;">
+
+                <div class="contact-method" style="margin-bottom:12px;text-align:left;">
+                    <label style="display:block;margin-bottom:6px;font-weight:600;">Como prefere ser contactado?</label>
+                    <label style="display:inline-flex;align-items:center;margin-right:12px;"><input type="radio" name="contactMethod" value="email" checked>&nbsp;Email</label>
+                    <label style="display:inline-flex;align-items:center;"><input type="radio" name="contactMethod" value="phone">&nbsp;Telemóvel</label>
+                </div>
+
+                <input type="email" id="emailInput" placeholder="O seu email">
+                <input type="tel" id="phoneInput" placeholder="O seu telemóvel" style="display:none">
                 <input type="hidden" id="formType" value="">
                 <button type="submit" class="btn-submit">Submeter</button>
             </form>
